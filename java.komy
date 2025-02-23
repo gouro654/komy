@@ -1,0 +1,76 @@
+import java.util.Scanner ;
+import java.io.File ;
+
+public class VowelCounter
+{
+    public static void main(String[] args) throws Exception
+    {
+        File text = new File ("Doc.txt") ;
+        Scanner input = new Scanner(text) ;
+        //File Doc.txt is scanned and is used 
+        int count = 0 ;
+
+        while (input.hasNext())
+        {
+            String words = input.nextLine();
+            System.out.println(words);
+
+            for (int i=0;i<words.length(); i++)
+            {
+                char car = words.charAt(i);
+                if (car =='a'|| car == 'i' || car == 'e' || car=='o' || car == 'u')
+                {
+                    count ++ ;
+                }
+
+                //Test Values (NOT FINAL)
+                int a = 5 ;
+                int e = 5;
+                int ii = 5;
+                int o = 5;
+                int u = 5;
+            }
+
+            //Process for creating the chart (NOT FINAL)
+            System.out.println(count);
+            System.out.print("A|");
+            final int MAX_ROWS = 1 ;
+            for (int row = 1; row <= MAX_ROWS; row++)
+            {
+                for(int a =5; a >= row; a--)
+                    System.out.print("#");
+            }
+            System.out.println("");
+            System.out.print("E|");
+            for (int row = 1; row <= MAX_ROWS; row++)
+            {
+                for(int e =5; e >= row; e--)
+                    System.out.print("#");
+            }
+            System.out.println("");
+            System.out.print("I|");
+            for (int row = 1; row <= MAX_ROWS; row++)
+            {
+                for(int ii =5; ii >= row; ii--)
+                    System.out.print("#");
+            }
+            System.out.println("");
+            System.out.print("O|");
+            for (int row = 1; row <= MAX_ROWS; row++)
+            {
+                for(int o =5; o >= row; o--)
+                    System.out.print("#");
+            }
+            System.out.println("");
+            System.out.print("U|");
+            for (int row = 1; row <= MAX_ROWS; row++)
+            {
+                for(int u =5; u >= row; u--)
+                    System.out.print("#");
+            }
+        }
+        //(ERROR) prints 15 # instead of 4
+        // a= 2 e=5 i=0 o=2 u=0 (FOR CHECK)
+        // 9 toatl vowels
+    }
+}
